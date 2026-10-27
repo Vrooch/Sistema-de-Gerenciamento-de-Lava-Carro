@@ -72,8 +72,6 @@ A autenticação faz parte do escopo principal. A implementação deverá aprove
 - Cancelar agendamentos.
 - Verificar disponibilidade.
 - Impedir conflitos de horário dentro das condições de funcionamento definidas para a aplicação.
-  
-  NOTA: A janela temporal da agenda será limitada a sete dias: o dia atual e os seis dias seguintes.
 
 ### 4.4. Gerenciamento de atendimentos
 
@@ -97,11 +95,15 @@ O administrador deverá poder consultar:
 - Total de agendamentos no período definido.
 - Total de atendimentos no período definido.
 
-A janela deve ser semanal, permitindo ver as semanas anteriores
-
 Os resultados deverão ser apresentados em formato textual no console, sem necessidade de gráficos ou ferramentas externas de análise.
 
-**Observação:** o significado temporal dos totais deverá ser definido de maneira consistente com cada indicador, distinguindo agendamentos previstos de atendimentos efetivamente realizados.
+### 4.7 Janela temporl
+- A janela temporal para novos agendamentos deve ser de 7 dias, o dia atual (hoje) + 6 dias.
+- A janela temporal para proximos agendamentos realizados pelos clientes deve ser de 7 dias, semanal de domingo a sabado, podendo nagevar para as proximas semanas.
+- A janela temporal para proximos agendamentos a serem realizados pelo adiministrador deve ser de 7 dias, semanal de domingo a sabado, podendo nagevar para as proximas semanas.
+- A janela temporal dos agendamentos/atendimentos do cliente (passado) deve ser de 7 dias, semanal de domingo a sabado, podendo nagevar para as semanas anteriores.
+- A janela temporal dos agendamentos/atendimentos realizados pelo adimistrador (passado) deve ser de 7 dias, semanal de domingo a sabado, podendo nagevar para as semanas anteriores.
+- A janela temporal dos relatórioes devem ser de 7 dias, semanal de domingo a sabado, podendo navegar para as proximas semanas ou para as semanas anteriores.
 
 ## 5. Limites técnicos e operacionais
 
@@ -175,8 +177,6 @@ Uma funcionalidade deverá ser excluída ou adiada quando:
 - Não ser necessária para completar o fluxo principal.
 - Comprometer o prazo estabelecido.
 
-Funcionalidades adiadas não serão consideradas pendências obrigatórias para a conclusão do projeto.
-
 ## 9. Critérios de conclusão
 
 O projeto poderá ser considerado concluído quando:
@@ -209,7 +209,8 @@ A implementação de funcionalidades fora do escopo não será necessária para 
 | ESC-008 | Histórico do cliente e consultas administrativas         | Definida                                         |
 | ESC-009 | Execução local, com um usuário por vez                   | Definida                                         |
 | ESC-010 | Avaliação de novas funcionalidades por benefício e custo | Definida                                         |
-|
+| ESC-011 | Janela base de 7 dias, variando conforme o item 4.7      | Definida                                         |
+| ESC-012 | O ciclo de desenvolvimento deve ter de 8 a 15 etapas     | Definida                                         |
 
 ### Manutenção das decisões
 
